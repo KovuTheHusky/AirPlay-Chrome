@@ -1,0 +1,24 @@
+{
+	"name": "AirPlay Chrome",
+	"version": "0.2.2",
+	"manifest_version": 2,
+	"description": "AirPlay videos right from webpage! Currently supports YouTube.",
+	"update_url": "http://assets.codeski.com/airchrome/updates.xml",
+	"content_scripts": [
+		{
+			"js": [ "chromeLocal.js" ],
+			"matches": [
+				"http://*.youtube.com/watch?*",
+				"https://*.youtube.com/watch?*"
+			],
+			"run_at": "document_end"
+		}
+	],
+	"content_security_policy": "default-src 'self' ",
+	"permissions": [
+		"http://*.youtube.com/watch?*",
+		"https://*.youtube.com/watch?*",
+		"http://*.local/*",
+		"https://*.local/*"
+	]
+}
